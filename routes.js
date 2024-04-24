@@ -6,6 +6,7 @@ const express = require('express');
 // va nous ramener sur usersController.getAllusers()
 const router = express.Router();
 const pokemonRoutes = require('./routes/pokemonRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 // Message de bienvenue sur mon API sur localhost:3000/api
 router.get('/', (req, res) => {
@@ -15,5 +16,10 @@ router.get('/', (req, res) => {
 // si lutilisateur va sur localhost:3000/api/pokemons, on utilise
 // pokemonRoutes pour gérer les routes
 router.use('/pokemons', pokemonRoutes);
+
+// si lutilisateur va sur localhost:3000/api/users, on utilise
+// userRoutes pour gérer les routes
+router.use('/users', userRoutes);
+
 
 module.exports = router;
